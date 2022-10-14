@@ -1,16 +1,15 @@
 [tool.poetry]
-name = "dsai-hw2-2021"
+name = "hw1"
 version = "0.1.0"
 description = ""
-authors = ["liumi666 <whitepepper4140@gmail.com>"]
+authors = ["chihen"]
 readme = "README.md"
-packages = [{include = "dsai_hw2_2021"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-numpy = "1.19.5"
-pandas = "1.1.5"
-scikit-learn = "0.24.1"
+python = "^3.10"
+numpy = "1.23.4"
+pandas = "^1.5.0"
+prophet = "^1.1.1"
 
 
 [build-system]
