@@ -377,7 +377,7 @@ test = ["pytest (>=3.0.0)", "pytest-cov"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c39db16efb655b349a711eb14b490e7532cab1f442cd9891b5d42cb8d2594da9"
+content-hash = "dec60592519ef0e4d6fb1ee6f4bd2fae9482b30f2b577bf6efc2a65d0854b3d0"
 
 [metadata.files]
 cmdstanpy = [
