@@ -21,24 +21,28 @@ if __name__ == "__main__":
     import warnings
     warnings.filterwarnings('ignore')
 
+    #使用Pandas.read_csv()功能由助教指定的args.training args.testing從CLI(Command Line Interface)讀入training_data.csv與testing_data.csv
     training_source = pd.read_csv(args.training, header=None)
     testing_source = pd.read_csv(args.testing, header=None)
 
+    #針對training data進行資料處理，只使用自動生成時間序列與收市價格與兩個欄位進行預測
     training_temp = training_source[[3]]
     training_temp.reset_index(inplace=True)
     training_temp['index'] = pd.to_datetime(training_temp['index'], unit='D')
     training_temp=training_temp.rename(columns={"index": "ds", 3 : "y"})
 
+    #針對testomg data進行資料處理只保留收市價格於預測時使用
     testing_temp = testing_source[[3]].rename(columns={3 : "y"})
 
     training_data = training_temp
     testing_data = testing_temp
 
+    #使用act_state儲存act行為(1,0,-1)
     act_state = 0
     act = 0
 
     for i in range(len(testing_data.index)-1):
-        #新增今日預測資料
+        #新增今日收市資料作為訓練資料
         training_data.loc[len(training_data.index)] = [(training_data.loc[len(training_data.index)-1][0]) + timedelta(days=1) ,testing_data.iloc[i]['y']]
         #模型訓練
         m = Prophet()
