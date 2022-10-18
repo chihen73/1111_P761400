@@ -11,11 +11,6 @@
 * 雖然抓一個月的波段不利於本作業績效最佳化，但考慮到指標太敏感、動作過於頻繁在作業限制條件下其實佔不到便宜(雖然不用買賣成本與手續費很棒但基數固定為1且每日只能一次動作無法進行超短線獲利)
 * 結論就是以上策略都不管用，最終還是回歸`一切都是命`(好像真的不用靠模型寫寫IF判斷獲利應該最好，不過還是盡力而為寫寫程式、玩玩模型當作一種有趣的經驗也很好)
 ---
-# 測試環境
-* Ubuntu Server 22.04.1 LTS (AMD64)  
-* Python 3.10.6  
-`Prophet因版本相容性因素無法於ARM架構下執行(實測Apple M1會出現問題)`
----
 # 程式邏輯說明([trader.py](https://github.com/chihen73/1111_P761400_HW1/blob/main/trader.py))
 * 使用Pandas.read_csv()功能由助教指定的`args.training` `args.testing`從**CLI**(Command Line Interface)讀入`training_data.csv`與`testing_data.csv`
 ```python
@@ -77,3 +72,18 @@ with open(args.output, 'a', newline='') as file:
 
   print("第", i+1, "日決策輸出")
 ```
+---
+# 測試過程
+* Ubuntu Server 22.04.1 LTS (AMD64)  
+`Prophet因版本相容性因素無法於ARM架構下執行(實測Apple M1會出現問題)`    
+![OS-version](https://github.com/chihen73/1111_P761400_HW1/blob/main/contents/OS_version.png)
+* 使用Poertry Shell虛擬環境
+* Python 3.10.6
+![python-version](https://github.com/chihen73/1111_P761400_HW1/blob/main/contents/python_version.png)
+* 依循作業規定使用CLI執行
+![traderpy-run](https://github.com/chihen73/1111_P761400_HW1/blob/main/contents/traderpy_run.png)
+* 依循作業規定每日寫入Act並以output.csv輸出
+![output-res](https://github.com/chihen73/1111_P761400_HW1/blob/main/contents/output_res.png)
+* 依循建議使用StockProfitCalculator計算獲利
+![profit-calculator](https://github.com/chihen73/1111_P761400_HW1/blob/main/contents/profit_calculator.png)
+
