@@ -3,6 +3,7 @@
 * 依循助教建議使用`Poetry`進行環境與套件管理
 * 依循助教提供之作業樣板進行分支編輯
 * 依循助教提供之code trace args進行整合
+* 依循助教提供之[StockProfitCalculator](https://github.com/NCKU-CCS/StockProfitCalculator)進行獲利計算
 ---
 # 策略說明
 * 考慮到模型本身預測價格已經過鈍化(對每日價格的波動敏感度小)所以就順著每天預測隔日的價格來做趨勢判斷
