@@ -38,7 +38,7 @@
   for i in range(len(testing_data.index)-1):
     training_data.loc[len(training_data.index)] = [(training_data.loc[len(training_data.index)-1][0]) + timedelta(days=1) ,testing_data.iloc[i]['y']]
 ```
-* 投資決策條件是比對明日預測市值是否大於今日市值若是歸類為上升趨勢進行動作寫入，反之則歸類為下降趨勢進行動作寫入
+* 投資決策條件是比對明日預測市值是否大於今日市值若是，歸類為上升趨勢進行動作寫入，反之則歸類為下降趨勢進行動作寫入
 ```python
 if  forecast.iloc[len(forecast.index) - 1]['yhat'] >= forecast.iloc[len(forecast.index) - 2]['yhat'] :
   #趨勢向上的決策
